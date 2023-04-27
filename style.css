@@ -1,0 +1,263 @@
+/* ------------------------------- */
+/*            CSS RESET            */
+/* ------------------------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  display: block;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  display: grid;
+  font-family: "Lato", sans-serif;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header-top"
+    "header-bottom"
+    "carousel"
+    "shop-by-category"
+    "product-tiles-v1"
+    "customer-service"
+    "product-tiles-v2"
+    "why-us"
+    "footer"
+    "back-to-top";
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+header {
+  position: relative;
+}
+
+.header-top {
+  grid-area: header-top;
+  outline: 1px solid red;
+  background-color: #1d1d1d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 50px 65px 50px;
+}
+
+ul {
+  display: flex;
+}
+
+ul > li a {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+}
+
+/* Target all a tags except for the last one */
+ul li:not(:last-child) a {
+  padding-right: 65px;
+}
+
+.header-bottom > div > i {
+  width: 18x;
+  color: #fff;
+}
+
+/* Target all svg elements except for the first one */
+.header-top > div:not(:first-child) i {
+  padding-left: 30px;
+  width: 18px;
+  color: #fff;
+}
+
+.header-bottom {
+  grid-area: header-bottom;
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: 65px;
+  background-color: #fff;
+  border-radius: 60px 60px 0px 0px;
+  outline: 1px solid green;
+}
+
+.header-bottom > div img {
+  width: 180px;
+}
+
+.header-bottom > ul > li a {
+  color: #1d1d1d;
+}
+
+.carousel {
+  grid-area: carousel;
+}
+
+.shop-by-category {
+  grid-area: shop-by-category;
+}
+
+.product-tiles-v1 {
+  grid-area: product-tiles-v1;
+}
+
+.customer-service {
+  grid-area: customer-service;
+}
+
+.product-tiles-v2 {
+  grid-area: product-tiles-v2;
+}
+
+.why-us {
+  grid-area: why-us;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.back-to-top {
+  grid-area: back-to-top;
+}
