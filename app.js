@@ -15,6 +15,7 @@ navToggle.addEventListener("click", () => {
   if (visibility === "false") {
     nav.setAttribute("data-visible", true);
     navToggle.setAttribute("aria-expanded", true);
+    // document.querySelector(".fa-xmark").style.display = "block";
   } else {
     nav.setAttribute("data-visible", false);
     navToggle.setAttribute("aria-expanded", false);

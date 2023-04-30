@@ -145,11 +145,28 @@ picutre {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* Changes a default 16px font size to 10px */
+html {
+  font-size: 62.5%;
+}
+
 .container {
   display: grid;
   font-family: "Lato", sans-serif;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   gap: 0px 0px;
@@ -164,8 +181,8 @@ picutre {
     "product-tiles-v2"
     "why-us"
     "footer"
-    "back-to-top";
-  width: 100%;
+    "back-to-top"
+    "responsive-menu";
 }
 
 .header-top {
@@ -181,7 +198,7 @@ picutre {
   align-items: center;
   width: 90%;
   margin: 0 auto;
-  padding: 22px 0;
+  padding: 2.2rem 0;
 }
 
 ul {
@@ -190,29 +207,28 @@ ul {
 
 ul > li a {
   text-decoration: none;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
   color: #fff;
 }
 
 /* Target all a tags except for the last one */
 ul li:not(:last-child) a {
-  /* padding-right: 65px; */
-  margin-right: 40px;
+  margin-right: 3.5rem;
 }
 
 /* Target all svg elements except for the first one */
 .header-top-container > div:not(:first-child) i {
-  padding-left: 30px;
-  width: 18px;
+  padding-left: 3rem;
+  font-size: 1.6rem;
   color: #fff;
   cursor: pointer;
 }
 
 .header-bottom {
   grid-area: header-bottom;
-  border-radius: 60px 60px 0px 0px;
-  box-shadow: 0px -50px 0px 15px rgba(29, 29, 29, 1);
+  border-radius: 6rem 6rem 0px 0px;
+  box-shadow: 0px -5rem 0px 1.5rem rgba(29, 29, 29, 1);
 }
 
 .header-bottom-container {
@@ -221,8 +237,8 @@ ul li:not(:last-child) a {
   align-items: center;
   width: 92%;
   margin: 0 auto;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
 }
 
 .header-bottom-container > ul > li a {
@@ -232,21 +248,23 @@ ul li:not(:last-child) a {
 form {
   padding: 0;
   background: #e9e9e9;
-  border-radius: 30px;
+  border-radius: 3rem;
+  width: 26vw;
 }
 
 form i {
   background: none;
+
   color: #838383;
-  padding: 14px 5px 14px 22px;
+  padding: 1.4rem 0.5rem 1.4rem 2.2rem;
   width: 18px;
   cursor: pointer;
 }
 
 form input {
   background: #e9e9e9;
-  width: 260px;
-  border-radius: 30px;
+  width: 22vw;
+  border-radius: 3rem;
   border: none;
 }
 
@@ -313,12 +331,94 @@ form input:focus {
   grid-area: back-to-top;
 }
 
+.responsive-menu {
+  grid-area: responsive-menu;
+  outline: 1px solid purple;
+}
+
+/* ------------------------------- */
+/*          TABLET VIEW            */
+/* ------------------------------- */
+@media (max-width: 1178px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .header-top {
+    display: none;
+  }
+
+  .header-bottom-container {
+    justify-content: center;
+  }
+
+  .header-bottom-container > div > svg {
+    margin-top: 1.6rem;
+  }
+
+  .header-bottom {
+    border-radius: 0;
+  }
+
+  form {
+    display: none;
+  }
+
+  .primary-navigation {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 0;
+    background-color: rgba(233, 233, 233, 1);
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 500ms ease-in-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    left: 1rem;
+    bottom: 2rem;
+    background: transparent;
+    background-image: url(./assets/mobile-menu-open.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    aspect-ratio: 1;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(./assets//icon-close.svg);
+  }
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 5px solid white;
+    outline-offset: 5px;
+  }
+}
+
+/* ------------------------------- */
+/*          MOBILE VIEW            */
+/* ------------------------------- */
+
 @media (max-width: 700px) {
   body {
     background-color: lightcoral;
   }
 
-  .primary-navigation {
+  /* .primary-navigation {
+    --underline-gap: 0.5rem;
     position: fixed;
     z-index: 1000;
     inset: 0 0 0 0;
@@ -327,7 +427,6 @@ form input:focus {
     margin: 0;
     flex-direction: column;
     transform: translateY(100%);
-    background-color: lightblue;
     transition: transform 500ms ease-in-out;
   }
 
@@ -345,18 +444,19 @@ form input:focus {
     background-image: url(./assets/icon-hamburger.svg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     aspect-ratio: 1;
     border: 0;
     cursor: pointer;
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./assets/icon-close.svg);
+    background-image: url(./assets//icon-close.svg);
   }
 
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
     outline-offset: 5px;
-  }
+  } */
 }
