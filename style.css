@@ -368,7 +368,7 @@ form input:focus {
     display: none;
   }
 
-  .primary-navigation {
+  .responsive-navigation-slider {
     position: fixed;
     z-index: 1000;
     inset: 0 0 0 0;
@@ -381,7 +381,7 @@ form input:focus {
     transition: transform 500ms ease-in-out;
   }
 
-  .primary-navigation[data-visible="true"] {
+  .responsive-navigation-slider[data-visible="true"] {
     transform: translateX(0);
   }
 
@@ -393,6 +393,7 @@ form input:focus {
     background-color: #1d1d1d;
     border-top-right-radius: 6rem;
     border-top-left-radius: 6rem;
+    z-index: 2000;
   }
 
   .responsive-menu-container {
@@ -406,7 +407,7 @@ form input:focus {
 
   .mobile-nav-toggle {
     display: block;
-    z-index: 2000;
+    /* z-index: 2000; */
     background: transparent;
     background-image: url(./assets/mobile-menu-open.svg);
     background-repeat: no-repeat;
@@ -418,9 +419,9 @@ form input:focus {
     cursor: pointer;
   }
 
-  .mobile-nav-toggle[aria-expanded="true"] {
+  /* .mobile-nav-toggle[aria-expanded="true"] {
     background-image: url(./assets//icon-close.svg);
-  }
+  } */
 
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
@@ -430,6 +431,120 @@ form input:focus {
   .responsive-menu-container > i {
     font-size: 2.2rem;
     color: #fff;
+  }
+
+  /* RESPONSIVE NAVIGATION SLIDER */
+  .responsive-navigation-slider {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+  }
+
+  .login {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .product-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "mac iPhone"
+      "iPad appleWatch"
+      "accessories sale";
+    grid-area: 2 / 1 / 3 / 2;
+    justify-items: center;
+    align-items: center;
+    outline: 1px solid red;
+  }
+
+  .product-categories li {
+    width: 30rem;
+    outline: 1px solid green;
+    background-color: #fff;
+    border-radius: 6rem;
+    height: 10rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .product-categories li:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .product-categories li img {
+    width: 6rem;
+  }
+
+  ul li:not(:last-child) a {
+    margin-right: 0;
+  }
+
+  .product-categories li a {
+    color: #1d1d1d;
+  }
+
+  .mac {
+    grid-area: mac;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iPhone {
+    grid-area: iPhone;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iPad {
+    grid-area: iPad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .appleWatch {
+    grid-area: appleWatch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .accessories {
+    grid-area: accessories;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sale {
+    grid-area: sale;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .faq {
+    grid-area: 3 / 1 / 4 / 2;
   }
 }
 
@@ -441,47 +556,4 @@ form input:focus {
   body {
     background-color: lightcoral;
   }
-
-  /* .primary-navigation {
-    --underline-gap: 0.5rem;
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 0 0;
-    list-style: none;
-    padding: min(20rem, 15vh) 2rem;
-    margin: 0;
-    flex-direction: column;
-    transform: translateY(100%);
-    transition: transform 500ms ease-in-out;
-  }
-
-  .primary-navigation[data-visible="true"] {
-    transform: translateX(0);
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-    position: absolute;
-    z-index: 2000;
-    left: 1rem;
-    bottom: 2rem;
-    background: transparent;
-    background-image: url(./assets/icon-hamburger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 2rem;
-    height: 2rem;
-    aspect-ratio: 1;
-    border: 0;
-    cursor: pointer;
-  }
-
-  .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./assets//icon-close.svg);
-  }
-
-  .mobile-nav-toggle:focus-visible {
-    outline: 5px solid white;
-    outline-offset: 5px;
-  } */
 }

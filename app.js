@@ -7,7 +7,7 @@ searchButton.addEventListener("click", () => {
 });
 
 // Navigation
-const nav = document.querySelector(".primary-navigation");
+const nav = document.querySelector(".responsive-navigation-slider");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 
 navToggle.addEventListener("click", () => {
@@ -15,7 +15,6 @@ navToggle.addEventListener("click", () => {
   if (visibility === "false") {
     nav.setAttribute("data-visible", true);
     navToggle.setAttribute("aria-expanded", true);
-    // document.querySelector(".fa-xmark").style.display = "block";
   } else {
     nav.setAttribute("data-visible", false);
     navToggle.setAttribute("aria-expanded", false);
