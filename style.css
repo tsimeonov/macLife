@@ -188,7 +188,6 @@ html {
 .header-top {
   grid-area: header-top;
   background-color: #1d1d1d;
-  display: flex;
   width: 100%;
 }
 
@@ -332,6 +331,7 @@ form input:focus {
 }
 
 .responsive-menu {
+  display: none;
   grid-area: responsive-menu;
   outline: 1px solid purple;
 }
@@ -341,11 +341,15 @@ form input:focus {
 /* ------------------------------- */
 @media (max-width: 1178px) {
   body {
-    background-color: lightblue;
+    /* background-color: lightblue; */
   }
 
   .header-top {
     display: none;
+  }
+
+  .header-bottom {
+    border-radius: 0;
   }
 
   .header-bottom-container {
@@ -356,8 +360,8 @@ form input:focus {
     margin-top: 1.6rem;
   }
 
-  .header-bottom {
-    border-radius: 0;
+  .header-bottom-container > ul {
+    display: none;
   }
 
   form {
@@ -381,12 +385,28 @@ form input:focus {
     transform: translateX(0);
   }
 
-  .mobile-nav-toggle {
+  .responsive-menu {
     display: block;
     position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1d1d1d;
+    border-top-right-radius: 6rem;
+    border-top-left-radius: 6rem;
+  }
+
+  .responsive-menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.8rem 0;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
     z-index: 2000;
-    left: 1rem;
-    bottom: 2rem;
     background: transparent;
     background-image: url(./assets/mobile-menu-open.svg);
     background-repeat: no-repeat;
@@ -405,6 +425,11 @@ form input:focus {
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
     outline-offset: 5px;
+  }
+
+  .responsive-menu-container > i {
+    font-size: 2.2rem;
+    color: #fff;
   }
 }
 
