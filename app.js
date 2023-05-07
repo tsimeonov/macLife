@@ -20,3 +20,12 @@ navToggle.addEventListener("click", () => {
     navToggle.setAttribute("aria-expanded", false);
   }
 });
+
+// FAQ Section
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    faq.classList.toggle("active");
+  });
+});
