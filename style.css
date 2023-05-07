@@ -192,6 +192,7 @@ html {
 }
 
 .header-top-container {
+  max-width: 144rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -231,6 +232,7 @@ ul li:not(:last-child) a {
 }
 
 .header-bottom-container {
+  max-width: 144rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -298,6 +300,10 @@ form input:focus {
   display: none;
 }
 
+.responsive-navigation-slider {
+  display: none;
+}
+
 .carousel {
   grid-area: carousel;
 }
@@ -333,17 +339,12 @@ form input:focus {
 .responsive-menu {
   display: none;
   grid-area: responsive-menu;
-  outline: 1px solid purple;
 }
 
 /* ------------------------------- */
 /*          TABLET VIEW            */
 /* ------------------------------- */
-@media (max-width: 1178px) {
-  body {
-    /* background-color: lightblue; */
-  }
-
+@media (max-width: 1174px) {
   .header-top {
     display: none;
   }
@@ -383,7 +384,7 @@ form input:focus {
     transition: transform 500ms ease-in-out;
   }
 
-  .responsive-navigation-slider[data-visible="true"] {
+  .responsive-navigation-slider[data-visible="false"] {
     transform: translateX(0);
   }
 
@@ -421,10 +422,6 @@ form input:focus {
     cursor: pointer;
   }
 
-  /* .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(./assets//icon-close.svg);
-  } */
-
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
     outline-offset: 5px;
@@ -433,6 +430,7 @@ form input:focus {
   .responsive-menu-container > i {
     font-size: 2.2rem;
     color: #fff;
+    cursor: pointer;
   }
 
   /* RESPONSIVE NAVIGATION SLIDER */
@@ -470,12 +468,10 @@ form input:focus {
     grid-area: 2 / 1 / 3 / 2;
     justify-items: center;
     align-items: center;
-    outline: 1px solid red;
   }
 
   .product-categories li {
-    width: 30rem;
-    outline: 1px solid green;
+    width: 35rem;
     background-color: #fff;
     border-radius: 6rem;
     height: 10rem;
@@ -562,7 +558,6 @@ form input:focus {
     padding-bottom: 1rem;
     border-bottom: 1px solid white;
     cursor: pointer;
-    outline: 1px solid purple;
   }
 
   .question {
@@ -578,7 +573,6 @@ form input:focus {
   .answer {
     max-height: 0;
     overflow: hidden;
-
     /* Add transition */
     transition: max-height 0.5s ease-in-out;
   }
@@ -645,7 +639,7 @@ form input:focus {
 /*          MOBILE VIEW            */
 /* ------------------------------- */
 
-@media (max-width: 700px) {
+@media (max-width: 765px) {
   body {
     background-color: lightcoral;
   }
