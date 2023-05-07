@@ -600,12 +600,31 @@ form input:focus {
     animation: fade 0.5s ease-in-out;
   }
 
+  .faq i {
+    font-size: 2rem;
+  }
+
   .faq.active i {
     transform: rotate(180deg);
   }
 
   i {
     transition: transform 0.3s ease-in-out;
+  }
+
+  .question div {
+    display: flex;
+  }
+
+  .question img {
+    width: 3rem;
+    padding-right: 5rem;
+
+    cursor: pointer;
+  }
+
+  .question img:not(:first-child) {
+    padding-left: 8rem;
   }
 
   /* Animation fade */
