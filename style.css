@@ -613,7 +613,6 @@ form input:focus {
   .question img {
     width: 3rem;
     padding-right: 5rem;
-
     cursor: pointer;
   }
 
@@ -642,5 +641,29 @@ form input:focus {
 @media (max-width: 765px) {
   body {
     background-color: lightcoral;
+  }
+
+  .product-categories {
+    /* grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "mac"
+      "iPhone"
+      "iPad"
+      "appleWatch"
+      "accessories"
+      "sale"; */
+  }
+
+  .product-categories li {
+    width: 90%;
+  }
+
+  .question img:not(:first-child) {
+    padding-left: 2rem;
+  }
+
+  .responsive-navigation-slider {
+    min-width: 410px;
   }
 }
