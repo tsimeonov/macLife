@@ -449,6 +449,12 @@ form input:focus {
 
   .login {
     grid-area: 1 / 1 / 1 / 1;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  .login i {
+    padding-right: 1rem;
   }
 
   .product-categories {
