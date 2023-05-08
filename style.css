@@ -250,21 +250,20 @@ form {
   padding: 0;
   background: #e9e9e9;
   border-radius: 3rem;
-  width: 26vw;
+  width: 32rem;
 }
 
 form i {
   background: none;
-
   color: #838383;
   padding: 1.4rem 0.5rem 1.4rem 2.2rem;
-  width: 18px;
+  width: 1.8rem;
   cursor: pointer;
 }
 
 form input {
   background: #e9e9e9;
-  width: 22vw;
+  width: 26rem;
   border-radius: 3rem;
   border: none;
 }
