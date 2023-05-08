@@ -404,7 +404,7 @@ form input:focus {
     align-items: center;
     width: 90%;
     margin: 0 auto;
-    padding: 1.8rem 0;
+    padding: 1rem 0;
   }
 
   .mobile-nav-toggle {
@@ -427,7 +427,7 @@ form input:focus {
   }
 
   .responsive-menu-container > i {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #fff;
     cursor: pointer;
   }
