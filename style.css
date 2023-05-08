@@ -389,8 +389,10 @@ form input:focus {
 
   .responsive-menu {
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     width: 100%;
     background-color: #1d1d1d;
     border-top-right-radius: 6rem;
@@ -637,13 +639,71 @@ form input:focus {
 /*          MOBILE VIEW            */
 /* ------------------------------- */
 
-@media (max-width: 765px) {
+@media (max-width: 755px) {
   body {
     background-color: lightcoral;
   }
 
+  .product-categories li {
+    width: 90%;
+  }
+
+  .question img {
+    width: 2rem;
+  }
+
+  .question img:not(:first-child) {
+    padding-left: 2rem;
+  }
+
+  /* .responsive-navigation-slider {
+    min-width: 410px;
+  } */
+}
+
+@media (max-width: 455px) {
+  .responsive-navigation-slider {
+    height: auto;
+    padding-bottom: 8rem;
+  }
+  .responsive-menu {
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+  .responsive-menu-container {
+    padding: 0.5rem 0;
+    width: 90%;
+  }
+
+  .mobile-nav-toggle {
+    width: 2.3rem;
+    height: 2.3rem;
+    outline: 1px solid red;
+  }
+
+  .responsive-menu-container > img {
+    width: 11rem;
+  }
+
+  .responsive-menu-container > i {
+    font-size: 2rem;
+  }
+
+  .responsive-navigation-slider {
+    overflow: auto;
+    height: 100vh;
+  }
+
+  .login {
+    margin-bottom: 2rem;
+  }
+  .question h3 {
+    font-size: 1.6rem;
+  }
+
   .product-categories {
-    /* grid-template-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas:
       "mac"
@@ -651,18 +711,25 @@ form input:focus {
       "iPad"
       "appleWatch"
       "accessories"
-      "sale"; */
+      "sale";
   }
+}
 
-  .product-categories li {
-    width: 90%;
-  }
-
-  .question img:not(:first-child) {
-    padding-left: 2rem;
-  }
-
-  .responsive-navigation-slider {
-    min-width: 410px;
-  }
+@media (max-width: 375px) {
+  /* .responsive-navigation-slider {
+    height: auto;
+    padding-bottom: 8rem;
+  } */
+  /* .product-categories {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+      "mac"
+      "iPhone"
+      "iPad"
+      "appleWatch"
+      "accessories"
+      "sale";
+  } */
 }
